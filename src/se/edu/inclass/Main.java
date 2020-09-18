@@ -18,15 +18,20 @@ public class Main {
         DataManager dm = new DataManager("./data/data.txt");
         ArrayList<Task> tasksData = dm.loadData();
 
+        printData(tasksData);
         System.out.println("Printing deadlines");
         printDeadlines(tasksData);
 
         System.out.println("Total number of deadlines: " + countDeadlines(tasksData));
         printDeadlinesUsingStreams(tasksData);
 
+
         for(Task t:filterByString(tasksData,"11")){
             System.out.println(t);
         }
+
+        printDeadlinesUsingStreams(tasksData);
+
     }
 
     private static int countDeadlines(ArrayList<Task> tasksData) {
